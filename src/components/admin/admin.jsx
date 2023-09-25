@@ -15,7 +15,7 @@ const Admin = () => {
   const [activeMenu, setActiveMen] = useLocalStorageState("active-menu", {
     defaultValue: 1,
   });
-//   const [isModalOpen, setIsModalOpen] = useState(false);
+  //   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -23,6 +23,7 @@ const Admin = () => {
   const [collapsed, setCollapsed] = useLocalStorageState("collapsed", {
     defaultValue: false,
   });
+  //149 206 167
   const {
     token: { colorBgContainer },
   } = theme.useToken();
@@ -32,67 +33,30 @@ const Admin = () => {
       <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className="demo-logo-vertical" />
 
-        {/* <Menu
-          theme="dark"
-          //   mode="inline"
-          defaultSelectedKeys={[`${activeMenu}`]}
-          items={[
-            {
-              key: "1",
-              icon: (
-                <UserOutlined
-                  onClick={() => {
-                    navigate("movies");
-                    setActiveMen(1);
-                  }}
-                />
-              ),
-              label: "Kinolar",
-            },
-            {
-              key: "2",
-              icon: (
-                <VideoCameraOutlined
-                  onClick={() => {
-                    navigate("ganers");
-                    setActiveMen(2);
-                  }}
-                />
-              ),
-              label: "Janrlar",
-            },
-          ]}
-        /> */}
-
         <Menu
           theme="dark"
-          defaultSelectedKeys={["1"]}
-          mode="horizontal"
-          selectedKeys={[`${activeMenu}`]}
-          className="flex items-center flex-col"
+          defaultSelectedKeys={[`${activeMenu}`]}
+          mode="inline"
         >
           <Menu.Item
-            className=""
             key="1"
+            icon={<UserOutlined />}
+            label="Kinolar"
             onClick={() => {
               navigate("movies");
               setActiveMen(1);
             }}
-            icon={<UserOutlined />}
-            label="Kinolar"
           >
             Kinolar
           </Menu.Item>
-
           <Menu.Item
-            className=""
             key="2"
+            icon={<VideoCameraOutlined />}
+            label="Janrlar"
             onClick={() => {
               navigate("ganers");
               setActiveMen(2);
             }}
-            icon={<VideoCameraOutlined />}
-            label="Janrlar"
           >
             Janrlar
           </Menu.Item>

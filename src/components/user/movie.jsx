@@ -1,20 +1,33 @@
 import { useNavigate, useParams } from "react-router";
 import { api } from "./api";
-import { useQuery } from "react-query";
-import { Button } from "antd";
+import { useMutation, useQuery } from "react-query";
+import { Button, Form, Input } from "antd";
 import {
   LikeOutlined,
   DislikeOutlined,
   ArrowLeftOutlined,
+  RightOutlined,
 } from "@ant-design/icons";
+import axios from "axios";
+import { useState } from "react";
 // import { Button } from "";
 
 const Movie = () => {
   const { data, isLoading, isError } = useQuery("api-movis", () =>
     api.get("/movies")
   );
+  const mutation = useMutation((newData) => {
+    return api.put(`/movies/${id}`, newData);
+  });
+
+  const [commentsData, setCommentsData] = useState([]);
+
   const { id } = useParams();
   const navigate = useNavigate();
+
+  const commentId = data?.data
+    .filter((i) => i.id == id)
+    .map((i) => i?.comments);
 
   if (isLoading)
     return (
@@ -34,6 +47,17 @@ const Movie = () => {
         </h1>
       </div>
     );
+
+  const onFinish = (value) => {
+    const newData = {
+      ...value,
+      id: +id,
+      img: "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
+    };
+    setCommentsData();
+
+    mutation.mutate(newData);
+  };
 
   return (
     <>
@@ -167,20 +191,77 @@ const Movie = () => {
             .filter((i) => i.id == id)
             .map((item) => {
               return (
-                <div className="mt-10">
+                <div className="mt-10" key={item?.id}>
                   <div>
                     <video
                       style={{ maxHeight: "500px", width: "80%" }}
                       className="mx-auto"
                       controls
-                      autoPlay
+                      // autoPlay
                     >
                       <source src={item?.moviLink} type="video/mp4" />
                       <source src={item?.moviLink} type="video/ogg" />
                       Your browser does not support the video tag.
                     </video>
                   </div>
-                  <div></div>
+
+                  <div className="bg-[#24303d] rounded-md mt-16 p-4 text-white">
+                    <Form
+                      className="flex items-center justify-between shadow-lg mb-2"
+                      style={{ borderBottom: "1px solid #000" }}
+                      onFinish={onFinish}
+                    >
+                      <Form.Item
+                        className="w-[100%]"
+                        name="userComment"
+                        type="text"
+                        rules={[
+                          {
+                            required: true,
+                            message: "So'z kiritishingiz kerak",
+                          },
+                        ]}
+                      >
+                        <Input
+                          className="w-[100%] bg-transparent placeholder:text-[#6e879f] text-[#6e879f] border-none outline-none"
+                          placeholder={"Fikringizni kiriting..."}
+                        />
+                      </Form.Item>
+                      <Form.Item>
+                        <Button
+                          type="primary"
+                          htmlType="submit"
+                          className="flex items-center bg-blue-600"
+                        >
+                          <RightOutlined />
+                        </Button>
+                      </Form.Item>
+                    </Form>
+
+                    <div className="mt-5">
+                      {item?.comments.map((comment) => {
+                        return (
+                          <div
+                            key={item?.id}
+                            className="flex items-center gap-2 text-[#6e879f]"
+                          >
+                            <img
+                              src={comment?.img}
+                              className="rounded-full w-[50px]"
+                            />
+                            <div className="">
+                              <p className="m-0 text-[12px] text-[#23527c]">
+                                Foydalanuvch
+                              </p>
+                              <p className="m-0 text-[15px]">
+                                {comment?.userComment}
+                              </p>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
                 </div>
               );
             })}

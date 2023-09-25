@@ -29,33 +29,12 @@
       "ageLimit": null,
       "comments": [
         {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
           "userId": 1,
           "userComment": "Zo'r kino ekan"
         }
       ]
     },
-
-    {
-      "id": 2,
-      "name": "Tig'iz vaqt 1",
-      "country": " Xitoy",
-      "type": "Klassika",
-      "typeName": "Tarjima kinolar / Jangari / Klassika / TAS-IX",
-      "langulage": "O'zbek tilida (Tarjima)",
-      "favored": 35,
-      "liked": 578,
-      "data": 2012,
-      "moviLink": "https://www.youtube.com/embed/8GJwoFd1BpE?si=ncNdFEDFk8XcU5v6",
-      "img": "http://images.uzmovi.com/ii/1579706916/81aeb5be/29288089.jpg",
-      "ageLimit": null,
-      "comments": [
-        {
-          "userId": 1,
-          "userComment": "Zo'r kino ekan"
-        }
-      ]
-    },
-
     {
       "id": 3,
       "name": "Ko'k Moviy qo'ng'iz premyera uzbek o'zbek tilida",
@@ -71,12 +50,12 @@
       "ageLimit": null,
       "comments": [
         {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
           "userId": 1,
-          "userComment": "Juda zur kinoekan"
+          "userComment": "Juda zur kino ekan"
         }
       ]
     },
-
     {
       "id": 4,
       "name": "Arvohlar uyi kulbasi premyera yangi netflix serial uzbek o'zbek tilida",
@@ -93,34 +72,12 @@
       "ageLimit": 18,
       "comments": [
         {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
           "userId": 1,
           "userComment": "Juda zur kinoekan"
         }
       ]
     },
-
-    {
-      "id": 5,
-      "name": "Daxshatli uy yangi qorqinchili serial uzbek tilida premyera",
-      "country": "Janubiy koreya",
-      "type": "Jangari",
-      "typeName": "Tarjima kinolar / Serial",
-      "langulage": "O'zbek tilida (Tarjima)",
-      "favored": 100,
-      "liked": 987,
-      "data": 2023,
-      "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
-      "img": "http://images.uzmovi.com/ii/1644517074/fb610dae/37974426.jpg",
-      "duration": 45,
-      "ageLimit": 18,
-      "comments": [
-        {
-          "userId": 1,
-          "userComment": "Juda zur kinoekan"
-        }
-      ]
-    },
-
     {
       "id": 6,
       "name": "O'likxona Premyera uzbek o'zbek tilida qorqinchili ujas film",
@@ -137,12 +94,12 @@
       "ageLimit": 18,
       "comments": [
         {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
           "userId": 1,
           "userComment": "Juda zur kinoekan"
         }
       ]
     },
-
     {
       "id": 7,
       "name": "La'nat Ujas qo'rqinchili film Uzbek tilida Premyera",
@@ -159,12 +116,12 @@
       "ageLimit": 18,
       "comments": [
         {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
           "userId": 1,
           "userComment": "Juda zur kinoekan"
         }
       ]
     },
-
     {
       "id": 8,
       "name": "Kung Fu tulpor ot premyera",
@@ -181,12 +138,12 @@
       "ageLimit": 18,
       "comments": [
         {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
           "userId": 1,
           "userComment": "Saytila vashshe ishlamayopdi norm IT bollari tõĝirlab bersin"
         }
       ]
     },
-
     {
       "id": 9,
       "name": "Asteriks va obeliks xitoydagi sarguzashtlari premyera",
@@ -203,12 +160,12 @@
       "ageLimit": null,
       "comments": [
         {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
           "userId": 1,
           "userComment": "sezer klapatrani patini yuldirsayam bulardi lekn ketishiga quyib berdi"
         }
       ]
     },
-
     {
       "id": 10,
       "name": " Aykut pochcha 2 premyera",
@@ -225,12 +182,12 @@
       "ageLimit": null,
       "comments": [
         {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
           "userId": 1,
           "userComment": "sezer klapatrani patini yuldirsayam bulardi lekn ketishiga quyib berdi"
         }
       ]
     },
-
     {
       "id": 11,
       "name": " Muqaddas zamin",
@@ -247,12 +204,12 @@
       "ageLimit": null,
       "comments": [
         {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
           "userId": 1,
           "userComment": "Bular Quddusni bosib olganda hammani qirib tashlagan Salohiddin af qilgan lekin bularni talqini boshqacha"
         }
       ]
     },
-
     {
       "id": 12,
       "name": "T 34",
@@ -269,12 +226,12 @@
       "ageLimit": null,
       "comments": [
         {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
           "userId": 1,
           "userComment": "Qachan endi ohirigacha koramiz 5 marta qatib qoldi"
         }
       ]
     },
-
     {
       "id": 13,
       "name": "1917 Premyera uzbek o'zbek tilida",
@@ -291,12 +248,12 @@
       "ageLimit": null,
       "comments": [
         {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
           "userId": 1,
           "userComment": "Kino zor bitta kadrda olinganga oxshidi"
         }
       ]
     },
-
     {
       "id": 14,
       "name": "Opengeymer premyera uzbek o'zbek tilida",
@@ -313,12 +270,12 @@
       "ageLimit": 18,
       "comments": [
         {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
           "userId": 1,
           "userComment": "Koriwga arzimas ekan tafsiya bermiman koriwwi"
         }
       ]
     },
-
     {
       "id": 15,
       "name": "Qo'g'irchoq premyera",
@@ -335,6 +292,7 @@
       "ageLimit": 18,
       "comments": [
         {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
           "userId": 1,
           "userComment": " Kinoga gap yo’q juda zo’r kino ekan ko’rishni maslahat beraman🙂👍🏻"
         }
@@ -380,12 +338,12 @@
       "ageLimit": 18,
       "comments": [
         {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
           "userId": 1,
           "userComment": "Ajoyib zo'r"
         }
       ]
     },
-
     {
       "id": 2,
       "name": "Elementlar",
@@ -402,12 +360,12 @@
       "ageLimit": 18,
       "comments": [
         {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
           "userId": 1,
           "userComment": "Mazza qildim"
         }
       ]
     },
-
     {
       "id": 3,
       "name": "Yalmog'iz va afsun kitobi",
@@ -424,12 +382,12 @@
       "ageLimit": 18,
       "comments": [
         {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
           "userId": 1,
           "userComment": "O'zbekcha emas ekan"
         }
       ]
     },
-
     {
       "id": 4,
       "name": "O'rgimchak odam 2",
@@ -446,6 +404,7 @@
       "ageLimit": 18,
       "comments": [
         {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
           "userId": 1,
           "userComment": "Zur emas ekan"
         }
@@ -467,12 +426,12 @@
       "ageLimit": 18,
       "comments": [
         {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
           "userId": 1,
           "userComment": "Ajoyib zo'r"
         }
       ]
     },
-
     {
       "id": 6,
       "name": "Elementlar",
@@ -489,12 +448,12 @@
       "ageLimit": 18,
       "comments": [
         {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
           "userId": 1,
           "userComment": "Mazza qildim"
         }
       ]
     },
-
     {
       "id": 7,
       "name": "Yalmog'iz va afsun kitobi",
@@ -511,12 +470,12 @@
       "ageLimit": 18,
       "comments": [
         {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
           "userId": 1,
           "userComment": "O'zbekcha emas ekan"
         }
       ]
     },
-
     {
       "id": 8,
       "name": "O'rgimchak odam 2",
@@ -533,6 +492,7 @@
       "ageLimit": 18,
       "comments": [
         {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
           "userId": 1,
           "userComment": "Zur emas ekan"
         }
@@ -554,12 +514,12 @@
       "ageLimit": 18,
       "comments": [
         {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
           "userId": 1,
           "userComment": "Ajoyib zo'r"
         }
       ]
     },
-
     {
       "id": 10,
       "name": "Elementlar",
@@ -576,12 +536,12 @@
       "ageLimit": 18,
       "comments": [
         {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
           "userId": 1,
           "userComment": "Mazza qildim"
         }
       ]
     },
-
     {
       "id": 11,
       "name": "Yalmog'iz va afsun kitobi",
@@ -598,12 +558,12 @@
       "ageLimit": 18,
       "comments": [
         {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
           "userId": 1,
           "userComment": "O'zbekcha emas ekan"
         }
       ]
     },
-
     {
       "id": 12,
       "name": "O'rgimchak odam 2",
@@ -620,6 +580,7 @@
       "ageLimit": 18,
       "comments": [
         {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
           "userId": 1,
           "userComment": "Zur emas ekan"
         }

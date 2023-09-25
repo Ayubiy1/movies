@@ -34,8 +34,11 @@ const Films = () => {
 
   return (
     <>
-      <div className="mt-10 md:px-32">
-        <div className="bg-[#523B67] w-full pt-3" style={{ opacity: "1px" }}>
+      <div
+        className="bg-[#523b6787] mt-20 w-full pt-3"
+        style={{ opacity: "1px" }}
+      >
+        <div className="md:px-32">
           <div
             className="h-[50px] flex items-center ms-5 mb-5"
             style={{ borderLeft: "8px solid #9B59B6" }}
@@ -72,7 +75,7 @@ const Films = () => {
                 }}
               >
                 {data?.data
-                  .filter((a) => a.id == 5)
+                  .filter((a) => a.id == 4)
                   .map((i) => (
                     <img
                       src={i?.img}
@@ -124,7 +127,8 @@ const Films = () => {
             </div>
           </Carousel>
         </div>
-
+      </div>
+      <div className="mt-10 md:px-32">
         <div className="flex items-start justify-center flex-wrap">
           {data?.data.map((item) => {
             return (

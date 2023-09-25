@@ -6,7 +6,7 @@ const Users = ({ setLogin, login }) => {
   return (
     <>
       <div
-        className="max-h-[100vh] overflow-y-scroll"
+        className="max-h-[100vh] overflow-y-scroll pb-20"
         style={{ border: "1px solid" }}
       >
         <Header setLogin={setLogin} login={login} />
