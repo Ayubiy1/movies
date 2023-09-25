@@ -1,0 +1,629 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "movies": [
+    {
+      "id": 1,
+      "name": " Qo'shnim Josus",
+      "country": "O'zbek",
+      "type": "Klassika",
+      "typeName": "Tarjima kinolar / Jangari / Klassika",
+      "langulage": "O'zbek tilida (Tarjima)",
+      "favored": 6,
+      "liked": 120,
+      "data": 2017,
+      "moviLink": "https://www.youtube.com/embed/7XrD7KN1Zpk?si=a1WI3zWYoSubCoV_",
+      "img": "http://images.uzmovi.com/ii/1599304404/bfb05b8e/31547938.jpg",
+      "ageLimit": null,
+      "comments": [
+        {
+          "userId": 1,
+          "userComment": "Zo'r kino ekan"
+        }
+      ]
+    },
+
+    {
+      "id": 2,
+      "name": "Tig'iz vaqt 1",
+      "country": " Xitoy",
+      "type": "Klassika",
+      "typeName": "Tarjima kinolar / Jangari / Klassika / TAS-IX",
+      "langulage": "O'zbek tilida (Tarjima)",
+      "favored": 35,
+      "liked": 578,
+      "data": 2012,
+      "moviLink": "https://www.youtube.com/embed/8GJwoFd1BpE?si=ncNdFEDFk8XcU5v6",
+      "img": "http://images.uzmovi.com/ii/1579706916/81aeb5be/29288089.jpg",
+      "ageLimit": null,
+      "comments": [
+        {
+          "userId": 1,
+          "userComment": "Zo'r kino ekan"
+        }
+      ]
+    },
+
+    {
+      "id": 3,
+      "name": "Ko'k Moviy qo'ng'iz premyera uzbek o'zbek tilida",
+      "country": "AQSH",
+      "type": "Jangari",
+      "typeName": "Hayotiy",
+      "langulage": "O'zbek tilida (Tarjima)",
+      "favored": 145,
+      "liked": 1255,
+      "data": 2023,
+      "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
+      "img": "http://images.uzmovi.com/2023-08-20/142403a372425bc25db31dcfe0ee311c.jpg",
+      "ageLimit": null,
+      "comments": [
+        {
+          "userId": 1,
+          "userComment": "Juda zur kinoekan"
+        }
+      ]
+    },
+
+    {
+      "id": 4,
+      "name": "Arvohlar uyi kulbasi premyera yangi netflix serial uzbek o'zbek tilida",
+      "country": "AQSH",
+      "type": "Jangari",
+      "typeName": "Tarjima kinolar / Qo'rqinchili / Serial",
+      "langulage": "O'zbek tilida (Tarjima)",
+      "favored": 67,
+      "liked": 526,
+      "data": 2023,
+      "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
+      "img": "http://images.uzmovi.com/2023-08-14/fca234191daa9d3d04754c9873807070.jpg",
+      "duration": 45,
+      "ageLimit": 18,
+      "comments": [
+        {
+          "userId": 1,
+          "userComment": "Juda zur kinoekan"
+        }
+      ]
+    },
+
+    {
+      "id": 5,
+      "name": "Daxshatli uy yangi qorqinchili serial uzbek tilida premyera",
+      "country": "Janubiy koreya",
+      "type": "Jangari",
+      "typeName": "Tarjima kinolar / Serial",
+      "langulage": "O'zbek tilida (Tarjima)",
+      "favored": 100,
+      "liked": 987,
+      "data": 2023,
+      "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
+      "img": "http://images.uzmovi.com/ii/1644517074/fb610dae/37974426.jpg",
+      "duration": 45,
+      "ageLimit": 18,
+      "comments": [
+        {
+          "userId": 1,
+          "userComment": "Juda zur kinoekan"
+        }
+      ]
+    },
+
+    {
+      "id": 6,
+      "name": "O'likxona Premyera uzbek o'zbek tilida qorqinchili ujas film",
+      "country": "AQSH",
+      "type": "Ujas",
+      "typeName": "Tarjima kinolar / Qo'rqinchili",
+      "langulage": "O'zbek tilida (Tarjima)",
+      "favored": 251,
+      "liked": 2118,
+      "data": 2021,
+      "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
+      "img": "http://images.uzmovi.com/ii/1637510909/14a91b1f/36777998.jpg",
+      "duration": 45,
+      "ageLimit": 18,
+      "comments": [
+        {
+          "userId": 1,
+          "userComment": "Juda zur kinoekan"
+        }
+      ]
+    },
+
+    {
+      "id": 7,
+      "name": "La'nat Ujas qo'rqinchili film Uzbek tilida Premyera",
+      "country": "AQSH",
+      "type": "Ujas",
+      "typeName": "Tarjima kinolar / Hayotiy / Qo'rqinchili / TAS-IX",
+      "langulage": "O'zbek tilida (Tarjima)",
+      "favored": 100,
+      "liked": 987,
+      "data": 2020,
+      "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
+      "img": "http://images.uzmovi.com/ii/1644517074/fb610dae/37974426.jpg",
+      "duration": 45,
+      "ageLimit": 18,
+      "comments": [
+        {
+          "userId": 1,
+          "userComment": "Juda zur kinoekan"
+        }
+      ]
+    },
+
+    {
+      "id": 8,
+      "name": "Kung Fu tulpor ot premyera",
+      "country": " Xitoy",
+      "type": "Komediya",
+      "typeName": "Tarjima kinolar / Jangari / Komediya / Sarguzasht",
+      "langulage": "O'zbek tilida (Tarjima)",
+      "favored": 0,
+      "liked": 645,
+      "data": 2023,
+      "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
+      "img": "http://images.uzmovi.com/2023-06-06/52096ef029850f4c7ecc6195a0a969e1.jpg",
+      "duration": 60,
+      "ageLimit": 18,
+      "comments": [
+        {
+          "userId": 1,
+          "userComment": "Saytila vashshe ishlamayopdi norm IT bollari tõĝirlab bersin"
+        }
+      ]
+    },
+
+    {
+      "id": 9,
+      "name": "Asteriks va obeliks xitoydagi sarguzashtlari premyera",
+      "country": "Fransiya",
+      "type": "Komediya",
+      "typeName": " Tarjima kinolar / Komediya / Sarguzasht",
+      "langulage": "O'zbek tilida (Tarjima)",
+      "favored": 0,
+      "liked": 645,
+      "data": 2023,
+      "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
+      "img": "http://images.uzmovi.com/2023-05-15/937539181b46e69f7ed420f956caa275.jpg",
+      "duration": 107,
+      "ageLimit": null,
+      "comments": [
+        {
+          "userId": 1,
+          "userComment": "sezer klapatrani patini yuldirsayam bulardi lekn ketishiga quyib berdi"
+        }
+      ]
+    },
+
+    {
+      "id": 10,
+      "name": " Aykut pochcha 2 premyera",
+      "country": " AQSH",
+      "type": "Komediya",
+      "typeName": "  Tarjima kinolar / Komediya",
+      "langulage": "O'zbek tilida (Tarjima)",
+      "favored": 45,
+      "liked": 140,
+      "data": 2023,
+      "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
+      "img": "http://images.uzmovi.com/2023-02-13/0090304d120fce4e91aafbd9e49c4da8.jpg",
+      "duration": 107,
+      "ageLimit": null,
+      "comments": [
+        {
+          "userId": 1,
+          "userComment": "sezer klapatrani patini yuldirsayam bulardi lekn ketishiga quyib berdi"
+        }
+      ]
+    },
+
+    {
+      "id": 11,
+      "name": " Muqaddas zamin",
+      "country": "AQSH",
+      "type": "Tarixiy",
+      "typeName": "Tarjima kinolar / Jangari / Tarixiy",
+      "langulage": "O'zbek tilida (Tarjima)",
+      "favored": 12,
+      "liked": 1573,
+      "data": 2014,
+      "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
+      "img": "http://images.uzmovi.com/ii/1603725911/ac9aed43/32090094.jpg",
+      "duration": 107,
+      "ageLimit": null,
+      "comments": [
+        {
+          "userId": 1,
+          "userComment": "Bular Quddusni bosib olganda hammani qirib tashlagan Salohiddin af qilgan lekin bularni talqini boshqacha"
+        }
+      ]
+    },
+
+    {
+      "id": 12,
+      "name": "T 34",
+      "country": "Rosiiya",
+      "type": "Tarixiy",
+      "typeName": "Tarjima kinolar / Jangari / Tarixiy / TAS-IX",
+      "langulage": "O'zbek tilida (Tarjima)",
+      "favored": 12,
+      "liked": 658,
+      "data": 2019,
+      "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
+      "img": "http://images.uzmovi.com/ii/1560420187/54f0ac65/26873436.jpg",
+      "duration": 142,
+      "ageLimit": null,
+      "comments": [
+        {
+          "userId": 1,
+          "userComment": "Qachan endi ohirigacha koramiz 5 marta qatib qoldi"
+        }
+      ]
+    },
+
+    {
+      "id": 13,
+      "name": "1917 Premyera uzbek o'zbek tilida",
+      "country": "AQSH",
+      "type": "Tarixiy",
+      "typeName": "Tarjima kinolar / Jangari / Tarixiy / Hayotiy / TAS-IX",
+      "langulage": "O'zbek tilida (Tarjima)",
+      "favored": 12,
+      "liked": 658,
+      "data": 2019,
+      "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
+      "img": "http://images.uzmovi.com/ii/1580352377/c505265e/29371402.jpg",
+      "duration": 120,
+      "ageLimit": null,
+      "comments": [
+        {
+          "userId": 1,
+          "userComment": "Kino zor bitta kadrda olinganga oxshidi"
+        }
+      ]
+    },
+
+    {
+      "id": 14,
+      "name": "Opengeymer premyera uzbek o'zbek tilida",
+      "country": "AQSH",
+      "type": "Tarixiy",
+      "typeName": "Tarjima kinolar / Hayotiy / Drama",
+      "langulage": "O'zbek tilida (Tarjima)",
+      "favored": 124,
+      "liked": 875,
+      "data": 2023,
+      "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
+      "img": "http://images.uzmovi.com/2023-07-30/13892dce9313557593d097b3bedc4242.jpg",
+      "duration": 187,
+      "ageLimit": 18,
+      "comments": [
+        {
+          "userId": 1,
+          "userComment": "Koriwga arzimas ekan tafsiya bermiman koriwwi"
+        }
+      ]
+    },
+
+    {
+      "id": 15,
+      "name": "Qo'g'irchoq premyera",
+      "country": "Hindiston",
+      "type": "Drama",
+      "typeName": "Tarjima kinolar / Hind / Jangari / Drama",
+      "langulage": "O'zbek tilida (Tarjima)",
+      "favored": 124,
+      "liked": 875,
+      "data": 2022,
+      "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
+      "img": "http://images.uzmovi.com/2022-12-25/2478b9427ac9bddcc2a214a95ecc51a2.jpg",
+      "duration": 187,
+      "ageLimit": 18,
+      "comments": [
+        {
+          "userId": 1,
+          "userComment": " Kinoga gap yo’q juda zo’r kino ekan ko’rishni maslahat beraman🙂👍🏻"
+        }
+      ]
+    }
+  ],
+  "ganers": [
+    {
+      "id": 1,
+      "title": "Klassika"
+    },
+    {
+      "id": 2,
+      "title": "Jangari"
+    },
+    {
+      "id": 3,
+      "title": "Komediya"
+    },
+    {
+      "id": 14,
+      "title": "Tarixiy"
+    },
+    {
+      "id": 3,
+      "title": "Ujas"
+    }
+  ],
+  "multfilm": [
+    {
+      "id": 1,
+      "name": "Kurkalar",
+      "country": "AQSH",
+      "type": "Multfilm",
+      "typeName": "Tarjima kinolar ",
+      "langulage": "O'zbek tilida (Tarjima)",
+      "favored": 223,
+      "liked": 2118,
+      "data": 2023,
+      "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
+      "img": "http://images.uzmovi.com/2023-06-12/563ea2a13d00ed2942b99ec8caf71ebd.jpg",
+      "duration": 107,
+      "ageLimit": 18,
+      "comments": [
+        {
+          "userId": 1,
+          "userComment": "Ajoyib zo'r"
+        }
+      ]
+    },
+
+    {
+      "id": 2,
+      "name": "Elementlar",
+      "country": "AQSH",
+      "type": "Multfilm",
+      "typeName": "Tarjima kinolar / Sarguzasht",
+      "langulage": "O'zbek tilida (Tarjima)",
+      "favored": 223,
+      "liked": 2118,
+      "data": 2023,
+      "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
+      "img": "http://images.uzmovi.com/2023-09-04/93cd944419ff4db237d72fcfc31f55fa.jpg",
+      "duration": 107,
+      "ageLimit": 18,
+      "comments": [
+        {
+          "userId": 1,
+          "userComment": "Mazza qildim"
+        }
+      ]
+    },
+
+    {
+      "id": 3,
+      "name": "Yalmog'iz va afsun kitobi",
+      "country": "AQSH",
+      "type": "Multfilm",
+      "typeName": "Tarjima kinolar / Sarguzasht",
+      "langulage": "O'zbek tilida (Tarjima)",
+      "favored": 223,
+      "liked": 2118,
+      "data": 2023,
+      "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
+      "img": "http://images.uzmovi.com/2023-06-20/a2944811d33fa4e817aefa4cf0b9d6be.jpg",
+      "duration": 107,
+      "ageLimit": 18,
+      "comments": [
+        {
+          "userId": 1,
+          "userComment": "O'zbekcha emas ekan"
+        }
+      ]
+    },
+
+    {
+      "id": 4,
+      "name": "O'rgimchak odam 2",
+      "country": "AQSH",
+      "type": "Multfilm",
+      "typeName": "Tarjima kinolar / Sarguzasht / Fantastika",
+      "langulage": "O'zbek tilida (Tarjima)",
+      "favored": 223,
+      "liked": 2118,
+      "data": 2023,
+      "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
+      "img": "http://images.uzmovi.com/2023-06-08/4ee16b8fbc89b2e2558e907eaac9e6de.jpg",
+      "duration": 107,
+      "ageLimit": 18,
+      "comments": [
+        {
+          "userId": 1,
+          "userComment": "Zur emas ekan"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Kurkalar",
+      "country": "AQSH",
+      "type": "Multfilm",
+      "typeName": "Tarjima kinolar ",
+      "langulage": "O'zbek tilida (Tarjima)",
+      "favored": 223,
+      "liked": 2118,
+      "data": 2023,
+      "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
+      "img": "http://images.uzmovi.com/2023-06-12/563ea2a13d00ed2942b99ec8caf71ebd.jpg",
+      "duration": 107,
+      "ageLimit": 18,
+      "comments": [
+        {
+          "userId": 1,
+          "userComment": "Ajoyib zo'r"
+        }
+      ]
+    },
+
+    {
+      "id": 6,
+      "name": "Elementlar",
+      "country": "AQSH",
+      "type": "Multfilm",
+      "typeName": "Tarjima kinolar / Sarguzasht",
+      "langulage": "O'zbek tilida (Tarjima)",
+      "favored": 223,
+      "liked": 2118,
+      "data": 2023,
+      "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
+      "img": "http://images.uzmovi.com/2023-09-04/93cd944419ff4db237d72fcfc31f55fa.jpg",
+      "duration": 107,
+      "ageLimit": 18,
+      "comments": [
+        {
+          "userId": 1,
+          "userComment": "Mazza qildim"
+        }
+      ]
+    },
+
+    {
+      "id": 7,
+      "name": "Yalmog'iz va afsun kitobi",
+      "country": "AQSH",
+      "type": "Multfilm",
+      "typeName": "Tarjima kinolar / Sarguzasht",
+      "langulage": "O'zbek tilida (Tarjima)",
+      "favored": 223,
+      "liked": 2118,
+      "data": 2023,
+      "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
+      "img": "http://images.uzmovi.com/2023-06-20/a2944811d33fa4e817aefa4cf0b9d6be.jpg",
+      "duration": 107,
+      "ageLimit": 18,
+      "comments": [
+        {
+          "userId": 1,
+          "userComment": "O'zbekcha emas ekan"
+        }
+      ]
+    },
+
+    {
+      "id": 8,
+      "name": "O'rgimchak odam 2",
+      "country": "AQSH",
+      "type": "Multfilm",
+      "typeName": "Tarjima kinolar / Sarguzasht / Fantastika",
+      "langulage": "O'zbek tilida (Tarjima)",
+      "favored": 223,
+      "liked": 2118,
+      "data": 2023,
+      "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
+      "img": "http://images.uzmovi.com/2023-06-08/4ee16b8fbc89b2e2558e907eaac9e6de.jpg",
+      "duration": 107,
+      "ageLimit": 18,
+      "comments": [
+        {
+          "userId": 1,
+          "userComment": "Zur emas ekan"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Kurkalar",
+      "country": "AQSH",
+      "type": "Multfilm",
+      "typeName": "Tarjima kinolar ",
+      "langulage": "O'zbek tilida (Tarjima)",
+      "favored": 223,
+      "liked": 2118,
+      "data": 2023,
+      "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
+      "img": "http://images.uzmovi.com/2023-06-12/563ea2a13d00ed2942b99ec8caf71ebd.jpg",
+      "duration": 107,
+      "ageLimit": 18,
+      "comments": [
+        {
+          "userId": 1,
+          "userComment": "Ajoyib zo'r"
+        }
+      ]
+    },
+
+    {
+      "id": 10,
+      "name": "Elementlar",
+      "country": "AQSH",
+      "type": "Multfilm",
+      "typeName": "Tarjima kinolar / Sarguzasht",
+      "langulage": "O'zbek tilida (Tarjima)",
+      "favored": 223,
+      "liked": 2118,
+      "data": 2023,
+      "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
+      "img": "http://images.uzmovi.com/2023-09-04/93cd944419ff4db237d72fcfc31f55fa.jpg",
+      "duration": 107,
+      "ageLimit": 18,
+      "comments": [
+        {
+          "userId": 1,
+          "userComment": "Mazza qildim"
+        }
+      ]
+    },
+
+    {
+      "id": 11,
+      "name": "Yalmog'iz va afsun kitobi",
+      "country": "AQSH",
+      "type": "Multfilm",
+      "typeName": "Tarjima kinolar / Sarguzasht",
+      "langulage": "O'zbek tilida (Tarjima)",
+      "favored": 223,
+      "liked": 2118,
+      "data": 2023,
+      "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
+      "img": "http://images.uzmovi.com/2023-06-20/a2944811d33fa4e817aefa4cf0b9d6be.jpg",
+      "duration": 107,
+      "ageLimit": 18,
+      "comments": [
+        {
+          "userId": 1,
+          "userComment": "O'zbekcha emas ekan"
+        }
+      ]
+    },
+
+    {
+      "id": 12,
+      "name": "O'rgimchak odam 2",
+      "country": "AQSH",
+      "type": "Multfilm",
+      "typeName": "Tarjima kinolar / Sarguzasht / Fantastika",
+      "langulage": "O'zbek tilida (Tarjima)",
+      "favored": 223,
+      "liked": 2118,
+      "data": 2023,
+      "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
+      "img": "http://images.uzmovi.com/2023-06-08/4ee16b8fbc89b2e2558e907eaac9e6de.jpg",
+      "duration": 107,
+      "ageLimit": 18,
+      "comments": [
+        {
+          "userId": 1,
+          "userComment": "Zur emas ekan"
+        }
+      ]
+    }
+  ]
+}
