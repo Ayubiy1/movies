@@ -7,8 +7,8 @@ import Login from "./components/login-page";
 import { useLocalStorageState } from "ahooks";
 import { useEffect, useState } from "react";
 import Admin from "./components/admin/admin";
-import Movies from "./components/admin/admin-pages/movies";
-import Ganers from "./components/admin/admin-pages/ganers";
+import Movies from "./components/admin/admin-pages/movies-admin";
+import Ganers from "./components/admin/admin-pages/ganers-admin";
 
 function App() {
   const [login, setLogin] = useLocalStorageState("login", {
@@ -22,9 +22,6 @@ function App() {
   useEffect(() => {
     if (login && location.pathname === "/login") navigate("admin/movies");
     else if (!login) navigate("/movie");
-    else if (location.pathname === "/movie") {
-      console.log("Adas");
-    }
   }, [login]);
 
   return (
@@ -50,7 +47,15 @@ function App() {
           />
           {/*  */}
 
-          <Route path="admin" element={<Admin />}>
+          <Route
+            path="admin"
+            element={
+              <Admin
+                isModalOpen={isModalOpen}
+                setIsModalOpen={setIsModalOpen}
+              />
+            }
+          >
             <Route
               path="movies"
               element={

@@ -9,8 +9,8 @@ import {
   RightOutlined,
 } from "@ant-design/icons";
 import axios from "axios";
-import { useState } from "react";
-// import { Button } from "";
+import { useEffect, useState } from "react";
+import { Fade } from "react-awesome-reveal";
 
 const Movie = () => {
   const { data, isLoading, isError } = useQuery("api-movis", () =>
@@ -20,10 +20,24 @@ const Movie = () => {
     return api.put(`/movies/${id}`, newData);
   });
 
-  const [commentsData, setCommentsData] = useState([]);
-
   const { id } = useParams();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (data?.data) {
+      let dataa = data.data.filter((i) => i.id == id).map((i) => i?.comments);
+      setCommentsData([
+        ...dataa,
+        // {
+        //   img: "2",
+        //   userId: 2,
+        //   userComment: "2",
+        // },
+      ]);
+    }
+  }, [data, id]);
+
+  const [commentsData, setCommentsData] = useState(null);
 
   const commentId = data?.data
     .filter((i) => i.id == id)
@@ -54,9 +68,15 @@ const Movie = () => {
       id: +id,
       img: "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
     };
-    setCommentsData();
-
-    mutation.mutate(newData);
+    setCommentsData((prev) => [
+      ...prev,
+      {
+        img: "2",
+        userId: 2,
+        userComment: "2",
+      },
+    ]);
+    console.log(commentsData);
   };
 
   return (
@@ -64,124 +84,126 @@ const Movie = () => {
       <div className="container md:px-32">
         {data?.data
           .filter((i) => i.id == id)
-          .map((item) => {
+          .map((item, index) => {
             return (
-              <div className="text-white text-center" key={item?.id}>
-                <div
-                  className="h-[50px] flex items-center mt-10"
-                  style={{ borderLeft: "8px solid #02b0e4" }}
-                >
-                  <button className="ml-5" onClick={() => navigate("/movie")}>
-                    <ArrowLeftOutlined />
-                  </button>
-                  <h1 className="ml-5 font-bold text-[22px]">{item?.name}</h1>
-                </div>
-
-                {/*  */}
-                <div className="mx-auto bg-[#24303D] px-10 py-5 mt-10 flex flex-wrap xl:flex-nowrap items-center justify-center xl:justify-between">
-                  <div className="relative mt-5 max-w-[300px]">
-                    <img src={item?.img} className="w-[250px] relative" />
-                    <span className="absolute top-[40px] left-[35px] bg-red-500 px-[8px] py-[2px]">
-                      {item?.data}
-                    </span>
-                    {/* <span></span> */}
+              <div className="text-white text-center" key={index}>
+                <Fade triggerOnce>
+                  <div
+                    className="h-[50px] flex items-center mt-10"
+                    style={{ borderLeft: "8px solid #02b0e4" }}
+                  >
+                    <button className="ml-5" onClick={() => navigate("/movie")}>
+                      <ArrowLeftOutlined />
+                    </button>
+                    <h1 className="ml-5 font-bold text-[22px]">{item?.name}</h1>
                   </div>
+
                   {/*  */}
-                  <div>
-                    <div className="lg:w-[678px] my-3">
-                      <div className="relative bg-[#1d232c] hover:bg-[#222933] rounded-sm flex items-center w-[100%] text-start">
-                        <p
-                          className="bg-[#304055] w-[100px] rounded-l-sm min-h-[35px] text-[13px] pl-3 flex items-center"
-                          style={{ fontWeight: "300" }}
-                        >
-                          NOMI
-                        </p>
-                        <p className="ml-3 text-[14px]">{item?.name}</p>
-                      </div>
+                  <div className="mx-auto bg-[#24303D] px-10 py-5 mt-10 flex flex-wrap xl:flex-nowrap items-center justify-center xl:justify-between">
+                    <div className="relative mt-5 max-w-[300px]">
+                      <img src={item?.img} className="w-[250px] relative" />
+                      <span className="absolute top-[40px] left-[35px] bg-red-500 px-[8px] py-[2px]">
+                        {item?.data}
+                      </span>
+                      {/* <span></span> */}
                     </div>
+                    {/*  */}
+                    <div>
+                      <div className="lg:w-[678px] my-3">
+                        <div className="relative bg-[#1d232c] hover:bg-[#222933] rounded-sm flex items-center w-[100%] text-start">
+                          <p
+                            className="bg-[#304055] w-[100px] rounded-l-sm min-h-[35px] text-[13px] pl-3 flex items-center"
+                            style={{ fontWeight: "300" }}
+                          >
+                            NOMI
+                          </p>
+                          <p className="ml-3 text-[14px]">{item?.name}</p>
+                        </div>
+                      </div>
 
-                    <div className="lg:w-[678px] my-3">
-                      <div className="relative bg-[#1d232c] hover:bg-[#222933] rounded-sm flex items-center w-[100%]">
-                        <p
-                          className="bg-[#304055] w-[100px] rounded-l-sm h-[35px] text-[13px] pl-3 flex items-center"
-                          style={{ fontWeight: "300" }}
-                        >
-                          DAVLATI
-                        </p>
-                        {/* <span className="text-[#304055] absolute top-[0] left-[-13px]">
+                      <div className="lg:w-[678px] my-3">
+                        <div className="relative bg-[#1d232c] hover:bg-[#222933] rounded-sm flex items-center w-[100%]">
+                          <p
+                            className="bg-[#304055] w-[100px] rounded-l-sm h-[35px] text-[13px] pl-3 flex items-center"
+                            style={{ fontWeight: "300" }}
+                          >
+                            DAVLATI
+                          </p>
+                          {/* <span className="text-[#304055] absolute top-[0] left-[-13px]">
                           <CaretLeftOutlined />
                         </span> */}
-                        <p className="ml-3 text-[14px]">{item?.country}</p>
+                          <p className="ml-3 text-[14px]">{item?.country}</p>
+                        </div>
                       </div>
-                    </div>
 
-                    <div className="lg:w-[678px] my-3">
-                      <div className="relative bg-[#1d232c] hover:bg-[#222933] rounded-sm flex items-center w-[100%]">
-                        <p
-                          className="bg-[#304055] w-[100px] rounded-l-sm h-[35px] text-[13px] pl-3 flex items-center"
-                          style={{ fontWeight: "300" }}
-                        >
-                          SANASI
-                        </p>
-                        {/* <span className="text-[#304055] absolute top-[0] left-[-13px]">
+                      <div className="lg:w-[678px] my-3">
+                        <div className="relative bg-[#1d232c] hover:bg-[#222933] rounded-sm flex items-center w-[100%]">
+                          <p
+                            className="bg-[#304055] w-[100px] rounded-l-sm h-[35px] text-[13px] pl-3 flex items-center"
+                            style={{ fontWeight: "300" }}
+                          >
+                            SANASI
+                          </p>
+                          {/* <span className="text-[#304055] absolute top-[0] left-[-13px]">
                           <CaretLeftOutlined />
                         </span> */}
-                        <p className="ml-3 text-[14px]">{item?.data}</p>
+                          <p className="ml-3 text-[14px]">{item?.data}</p>
+                        </div>
                       </div>
-                    </div>
 
-                    <div className="lg:w-[678px] my-3">
-                      <div className="relative bg-[#1d232c] hover:bg-[#222933] rounded-sm flex items-center w-[100%] text-start">
-                        <p
-                          className="bg-[#304055] w-[100px] rounded-l-sm h-[35px] text-[13px] pl-3 flex items-center"
-                          style={{ fontWeight: "300" }}
-                        >
-                          JANR
-                        </p>
-                        {/* <span className="text-[#304055] absolute top-[0] left-[-13px]">
+                      <div className="lg:w-[678px] my-3">
+                        <div className="relative bg-[#1d232c] hover:bg-[#222933] rounded-sm flex items-center w-[100%] text-start">
+                          <p
+                            className="bg-[#304055] w-[100px] rounded-l-sm h-[35px] text-[13px] pl-3 flex items-center"
+                            style={{ fontWeight: "300" }}
+                          >
+                            JANR
+                          </p>
+                          {/* <span className="text-[#304055] absolute top-[0] left-[-13px]">
                           <CaretLeftOutlined />
                         </span> */}
-                        <p className="ml-3 text-[14px]">{item?.typeName}</p>
+                          <p className="ml-3 text-[14px]">{item?.typeName}</p>
+                        </div>
                       </div>
-                    </div>
 
-                    <div className="lg:w-[678px] my-3">
-                      <div className="relative bg-[#1d232c] hover:bg-[#222933] rounded-sm flex items-center w-[100%]">
-                        <p
-                          className="bg-[#304055] w-[100px] rounded-l-sm h-[35px] text-[13px] pl-3 flex items-center"
-                          style={{ fontWeight: "300" }}
-                        >
-                          TIL
-                        </p>
-                        {/* <span className="text-[#304055] absolute top-[0] left-[-13px]">
+                      <div className="lg:w-[678px] my-3">
+                        <div className="relative bg-[#1d232c] hover:bg-[#222933] rounded-sm flex items-center w-[100%]">
+                          <p
+                            className="bg-[#304055] w-[100px] rounded-l-sm h-[35px] text-[13px] pl-3 flex items-center"
+                            style={{ fontWeight: "300" }}
+                          >
+                            TIL
+                          </p>
+                          {/* <span className="text-[#304055] absolute top-[0] left-[-13px]">
                           <CaretLeftOutlined />
                         </span> */}
-                        <p className="ml-3 text-[14px]">{item?.langulage}</p>
+                          <p className="ml-3 text-[14px]">{item?.langulage}</p>
+                        </div>
                       </div>
-                    </div>
 
-                    <div className="text-center my-3 mb-4 flex items-center justify-center gap-5">
-                      <Button
-                        type="primary"
-                        className="flex items-center bg-[#4096ff]"
-                      >
-                        <LikeOutlined />
+                      <div className="text-center my-3 mb-4 flex items-center justify-center gap-5">
+                        <Button
+                          type="primary"
+                          className="flex items-center bg-[#4096ff]"
+                        >
+                          <LikeOutlined />
+                        </Button>
+                        <span className="text-green-600">{item?.liked}</span>
+                        <Button
+                          type="primary"
+                          danger
+                          className="flex items-center "
+                        >
+                          <DislikeOutlined />
+                        </Button>
+                      </div>
+
+                      <Button className="text-white w-full">
+                        Kinoni ko'rish
                       </Button>
-                      <span className="text-green-600">{item?.liked}</span>
-                      <Button
-                        type="primary"
-                        danger
-                        className="flex items-center "
-                      >
-                        <DislikeOutlined />
-                      </Button>
                     </div>
-
-                    <Button className="text-white w-full">
-                      Kinoni ko'rish
-                    </Button>
                   </div>
-                </div>
+                </Fade>
               </div>
             );
           })}
@@ -192,76 +214,78 @@ const Movie = () => {
             .map((item) => {
               return (
                 <div className="mt-10" key={item?.id}>
-                  <div>
-                    <video
-                      style={{ maxHeight: "500px", width: "80%" }}
-                      className="mx-auto"
-                      controls
-                      // autoPlay
-                    >
-                      <source src={item?.moviLink} type="video/mp4" />
-                      <source src={item?.moviLink} type="video/ogg" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
-
-                  <div className="bg-[#24303d] rounded-md mt-16 p-4 text-white">
-                    <Form
-                      className="flex items-center justify-between shadow-lg mb-2"
-                      style={{ borderBottom: "1px solid #000" }}
-                      onFinish={onFinish}
-                    >
-                      <Form.Item
-                        className="w-[100%]"
-                        name="userComment"
-                        type="text"
-                        rules={[
-                          {
-                            required: true,
-                            message: "So'z kiritishingiz kerak",
-                          },
-                        ]}
+                  <Fade triggerOnce>
+                    <div>
+                      <video
+                        style={{ maxHeight: "500px", width: "80%" }}
+                        className="mx-auto"
+                        controls
+                        // autoPlay
                       >
-                        <Input
-                          className="w-[100%] bg-transparent placeholder:text-[#6e879f] text-[#6e879f] border-none outline-none"
-                          placeholder={"Fikringizni kiriting..."}
-                        />
-                      </Form.Item>
-                      <Form.Item>
-                        <Button
-                          type="primary"
-                          htmlType="submit"
-                          className="flex items-center bg-blue-600"
-                        >
-                          <RightOutlined />
-                        </Button>
-                      </Form.Item>
-                    </Form>
-
-                    <div className="mt-5">
-                      {item?.comments.map((comment) => {
-                        return (
-                          <div
-                            key={item?.id}
-                            className="flex items-center gap-2 text-[#6e879f]"
-                          >
-                            <img
-                              src={comment?.img}
-                              className="rounded-full w-[50px]"
-                            />
-                            <div className="">
-                              <p className="m-0 text-[12px] text-[#23527c]">
-                                Foydalanuvch
-                              </p>
-                              <p className="m-0 text-[15px]">
-                                {comment?.userComment}
-                              </p>
-                            </div>
-                          </div>
-                        );
-                      })}
+                        <source src={item?.moviLink} type="video/mp4" />
+                        <source src={item?.moviLink} type="video/ogg" />
+                        Your browser does not support the video tag.
+                      </video>
                     </div>
-                  </div>
+
+                    <div className="bg-[#24303d] rounded-md mt-16 p-4 text-white">
+                      <Form
+                        className="flex items-center justify-between shadow-lg mb-2"
+                        style={{ borderBottom: "1px solid #000" }}
+                        onFinish={onFinish}
+                      >
+                        <Form.Item
+                          className="w-[100%]"
+                          name="userComment"
+                          type="text"
+                          rules={[
+                            {
+                              required: true,
+                              message: "So'z kiritishingiz kerak",
+                            },
+                          ]}
+                        >
+                          <Input
+                            className="w-[100%] bg-transparent placeholder:text-[#6e879f] text-[#6e879f] border-none outline-none"
+                            placeholder={"Fikringizni kiriting..."}
+                          />
+                        </Form.Item>
+                        <Form.Item>
+                          <Button
+                            type="primary"
+                            htmlType="submit"
+                            className="flex items-center bg-blue-600"
+                          >
+                            <RightOutlined />
+                          </Button>
+                        </Form.Item>
+                      </Form>
+
+                      <div className="mt-5">
+                        {item?.comments.map((comment) => {
+                          return (
+                            <div
+                              key={item?.id}
+                              className="flex items-center gap-2 text-[#6e879f]"
+                            >
+                              <img
+                                src={comment?.img}
+                                className="rounded-full w-[50px]"
+                              />
+                              <div className="">
+                                <p className="m-0 text-[12px] text-[#23527c]">
+                                  Foydalanuvch
+                                </p>
+                                <p className="m-0 text-[15px]">
+                                  {comment?.userComment}
+                                </p>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </Fade>
                 </div>
               );
             })}

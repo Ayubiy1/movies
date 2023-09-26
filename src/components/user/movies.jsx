@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./user.css";
 import { useMutation, useQuery } from "react-query";
 import { useNavigate } from "react-router";
 import { api } from "./api";
 import { Carousel } from "antd";
+import "./user.css";
 
 const Films = () => {
   const { data, isLoading, isError } = useQuery("api-movis", () =>
     api.get("/movies")
   );
-
   const navigate = useNavigate();
 
   if (isLoading)
@@ -22,7 +21,6 @@ const Films = () => {
         </div>
       </div>
     );
-
   if (isError)
     return (
       <div className="flex items-center justify-center h-[75vh]">
@@ -45,6 +43,7 @@ const Films = () => {
           >
             <p className="text-white ps-3">PREMYERA</p>
           </div>
+
           <Carousel autoplay className="mb-10">
             <div>
               <h3
@@ -128,25 +127,26 @@ const Films = () => {
           </Carousel>
         </div>
       </div>
+
       <div className="mt-10 md:px-32">
-        <div className="flex items-start justify-center flex-wrap">
+        <div className="flex items-start justifycenter w-[100%] overflow-y-scroll py-5">
           {data?.data.map((item) => {
             return (
               <div
                 key={item?.id}
-                className="relative max-w-[200px] m-3 p-3 cursor-pointer bg-[#1D232C]"
+                className="relative min-w-[200px] m-3 p-3 cursor-pointer bg-[#1D232C]"
                 onClick={() => navigate(`${item?.id}`)}
               >
-                <img src={item?.img} className="w-[100%]" />
+                <img src={item?.img} className="w-[100%] h-[260px]" />
                 <span className="absolute top-[13px] left-[13px] text-[11px] px-2 py-1 bg-red-700 text-white">
                   {item?.data}
                 </span>
-                <div className="bg-[#222933] mt-2 p-2 text-center">
+                <div className="bg-[#222933] mt-2 p-2 textcenter">
                   <p
                     className="text-white m-0 text-[15px] font-serif"
                     style={{ fontWeight: "100" }}
                   >
-                    {item?.name}
+                    {item?.name.slice(0, 20)}
                   </p>
                 </div>
               </div>

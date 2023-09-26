@@ -3,6 +3,7 @@ import { api } from "../../user/api";
 import { useQuery } from "react-query";
 import { DeleteFilled, EditFilled } from "@ant-design/icons";
 import { useState } from "react";
+import { Fade } from "react-awesome-reveal";
 
 const Movies = ({ isModalOpen, setIsModalOpen }) => {
   const { data, isLoading, isError } = useQuery("api-movis", () =>
@@ -117,13 +118,16 @@ const Movies = ({ isModalOpen, setIsModalOpen }) => {
             </Modal>
           );
         })}
-      <Table
-        key={data?.data.map((i) => i.id)}
-        loading={isLoading}
-        columns={columns}
-        dataSource={data?.data.map((item) => ({ ...item, key: item.id })) || []}
-        // dataSource={data?.data}
-      />
+      <Fade triggerOnce>
+        <Table
+          key={data?.data.map((i) => i.id)}
+          loading={isLoading}
+          columns={columns}
+          dataSource={
+            data?.data.map((item) => ({ ...item, key: item.id })) || []
+          }
+        />
+      </Fade>
     </>
   );
 };
