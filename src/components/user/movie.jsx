@@ -11,6 +11,7 @@ import {
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Fade } from "react-awesome-reveal";
+import { useLocalStorageState } from "ahooks";
 
 const Movie = () => {
   const { data, isLoading, isError } = useQuery("api-movis", () =>
@@ -18,6 +19,10 @@ const Movie = () => {
   );
   const mutation = useMutation((newData) => {
     return api.put(`/movies/${id}`, newData);
+  });
+
+  const [likeOne, setLikeOne] = useLocalStorageState("like-one", {
+    defaultValue: false,
   });
 
   const { id } = useParams();
@@ -182,20 +187,56 @@ const Movie = () => {
                       </div>
 
                       <div className="text-center my-3 mb-4 flex items-center justify-center gap-5">
-                        <Button
-                          type="primary"
-                          className="flex items-center bg-[#4096ff]"
-                        >
-                          <LikeOutlined />
-                        </Button>
+                        {likeOne !== true ? (
+                          <Button
+                            type="primary"
+                            className="flex items-center bg-[#4096ff]"
+                            onClick={() => {
+                              console.log(item?.liked);
+                              setLikeOne(true);
+                            }}
+                          >
+                            <LikeOutlined />
+                          </Button>
+                        ) : (
+                          <Button
+                            type="primary"
+                            disabled
+                            className="flex items-center bg-[#4096ff]"
+                            onClick={() => {
+                              console.log(item?.liked);
+                              setLikeOne(true);
+                            }}
+                          >
+                            <LikeOutlined />
+                          </Button>
+                        )}
+
                         <span className="text-green-600">{item?.liked}</span>
-                        <Button
-                          type="primary"
-                          danger
-                          className="flex items-center "
-                        >
-                          <DislikeOutlined />
-                        </Button>
+
+                        {likeOne !== false ? (
+                          <Button
+                            className="flex items-center bg-red-700 text-white"
+                            onClick={() => {
+                              console.log(item?.liked);
+                              setLikeOne(false);
+                            }}
+                          >
+                            <DislikeOutlined />
+                          </Button>
+                        ) : (
+                          <Button
+                            type="primary"
+                            disabled
+                            className="flex items-center bg-red-700 text-white"
+                            onClick={() => {
+                              console.log(item?.liked);
+                              setLikeOne(true);
+                            }}
+                          >
+                            <DislikeOutlined />
+                          </Button>
+                        )}
                       </div>
 
                       <Button className="text-white w-full">

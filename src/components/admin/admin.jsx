@@ -16,14 +16,17 @@ import {
   Checkbox,
   Space,
   DatePicker,
+  Select,
+  message,
 } from "antd";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router";
 import "./admin.css";
 import { useMutation, useQuery } from "react-query";
 import { api } from "../user/api";
 import axios from "axios";
 import { useQueryClient } from "react-query"; // queryClient o'zgaruvchisini import qiling
+import { VideoCameraAddOutlined } from "@ant-design/icons";
 
 const { Header, Sider, Content } = Layout;
 
@@ -33,8 +36,16 @@ const Admin = () => {
   const [activeMenu, setActiveMen] = useLocalStorageState("active-menu", {
     defaultValue: 1,
   });
-  const location = useLocation();
+  const [messageApi, contextHolder] = message.useMessage();
+
   const navigate = useNavigate();
+
+  const successPost = () => {
+    messageApi.open({
+      type: "success",
+      content: `Kino muvaffaqiyatli qo'shildi`,
+    });
+  };
 
   const [collapsed, setCollapsed] = useLocalStorageState("collapsed", {
     defaultValue: false,
@@ -48,14 +59,20 @@ const Admin = () => {
   const { data, isLoading, isError } = useQuery("api-movisa", () =>
     api.get("/movies")
   );
+  const {
+    data: dataGaners,
+    isLoading: isLoadingGaners,
+    isError: isErrorGaners,
+  } = useQuery("api-ganers", () => api.get("/ganers"));
 
-  const { mutate: newPost } = useMutation(
+  const { mutate: newPost, isLoading: isLoadingPost } = useMutation(
     (newData) => {
       return api.post(`/movies`, newData);
     },
     {
       onSuccess: () => {
-        queryClient.invalidateQueries("api-movis");
+        queryClient.invalidateQueries("api-movisa");
+        successPost();
       },
     }
   );
@@ -73,6 +90,7 @@ const Admin = () => {
   const onFinish = (values) => {
     const maxI = data?.data.map((i) => i.id);
     const maxId = Math.max(...maxI);
+
     newPost({
       ...values,
       comments: [],
@@ -80,11 +98,19 @@ const Admin = () => {
       liked: 0,
       favored: 0,
     });
+
+    handleCancel();
   };
 
   const onChange = (date, dateString) => {
     setDateMovie(dateString);
   };
+
+  useEffect(() => {
+    if (isLoadingPost) {
+      successPost();
+    }
+  }, [newPost]);
 
   if (isLoading)
     return (
@@ -96,6 +122,10 @@ const Admin = () => {
       </div>
     );
 
+  if (isLoadingPost) {
+    return <>Loading...</>;
+  }
+
   if (isError)
     return (
       <div className="flex items-center justify-center h-[75vh]">
@@ -106,10 +136,13 @@ const Admin = () => {
     );
 
   return (
-    <Layout className="h-[86vh]">
-      <Sider trigger={null} collapsible collapsed={collapsed}>
-        <div className="demo-logo-vertical" />
-
+    <Layout className="h[79vh]" style={{ height: "75vh" }}>
+      <Sider
+        trigger={null}
+        collapsible
+        collapsed={collapsed}
+        style={{ height: "86vh" }}
+      >
         <Menu
           theme="dark"
           defaultSelectedKeys={[`${activeMenu}`]}
@@ -139,7 +172,7 @@ const Admin = () => {
           </Menu.Item>
         </Menu>
       </Sider>
-      <Layout>
+      <Layout style={{ height: "86vh" }}>
         <Header
           style={{
             padding: 0,
@@ -157,10 +190,12 @@ const Admin = () => {
               height: 64,
             }}
           />
-          <Button className="mr-10" onClick={showModal}>
+          <Button className="mr-10 flex items-center" onClick={showModal}>
+            <VideoCameraAddOutlined />
             Film qo'shish
           </Button>
         </Header>
+
         <Modal
           title="Film Qo'shish"
           open={isModalOpen}
@@ -214,6 +249,19 @@ const Admin = () => {
             </Form.Item>
 
             <Form.Item
+              label="Kino Tili"
+              name="type"
+              rules={[
+                {
+                  required: true,
+                  message: "Kino Tilini kiriting!",
+                },
+              ]}
+            >
+              <Select options={dataGaners?.data} />
+            </Form.Item>
+
+            <Form.Item
               label="Kino video link"
               name="moviLink"
               rules={[
@@ -226,8 +274,8 @@ const Admin = () => {
               <Input />
             </Form.Item>
 
-            <Form.Item>
-              <Space direction="vertical">
+            <Form.Item label="Kino ishlab chiqarilgan sanani tanlang">
+              <Space direction="vertical" className="w-[100%]">
                 <DatePicker onChange={onChange} />
               </Space>
             </Form.Item>
@@ -271,13 +319,13 @@ const Admin = () => {
             </Form.Item>
           </Form>{" "}
         </Modal>
+
         <Content
           style={{
             margin: "24px 16px",
             padding: 24,
             minHeight: 280,
             background: colorBgContainer,
-            height: "50vh",
             overflowY: "scroll",
           }}
         >

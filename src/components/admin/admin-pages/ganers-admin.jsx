@@ -46,3 +46,14 @@ const Ganers = () => {
   );
 };
 export default Ganers;
+// {
+//   "name": "Qo'shnim Josus 2",
+//   "country": "O'zbek",
+//   "img": "http://images.uzmovi.com/ii/1599304404/bfb05b8e/31547938.jpg",
+//   "type": "Klassika",
+//   "favored": 6,
+//   "liked": 120,
+//   "data": 2017,
+//   "ageLimit": 18,
+//   "id": 1
+// },
