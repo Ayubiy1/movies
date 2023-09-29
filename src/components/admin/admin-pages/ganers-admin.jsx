@@ -63,7 +63,7 @@ const Ganers = ({ isModalOpenGaner, setIsModalOpenGaner }) => {
   );
 
   // Ganer Put
-  const { mutate: dataPut } = useMutation(
+  const { mutate: dataPut, isLoading: isLoadingPut } = useMutation(
     (newData) => {
       console.log(ganerID);
       return api.put(`/ganers/${ganerID}`, newData);
@@ -162,6 +162,10 @@ const Ganers = ({ isModalOpenGaner, setIsModalOpenGaner }) => {
   }
 
   if (isLoadingDelete) {
+    return <>Loading...</>;
+  }
+
+  if (isLoadingPut) {
     return <>Loading...</>;
   }
   // console.log(ganer?.label);
