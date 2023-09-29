@@ -9,71 +9,103 @@ import { useEffect, useState } from "react";
 import Admin from "./components/admin/admin";
 import Movies from "./components/admin/admin-pages/movies-admin";
 import Ganers from "./components/admin/admin-pages/ganers-admin";
+import { Context } from "./components/contex";
 
 function App() {
   const [login, setLogin] = useLocalStorageState("login", {
     defaultValue: false,
   });
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpenGaner, setIsModalOpenGaner] = useState(false);
+  const [movie, setMovie] = useState({});
+  const [filter, setFilter] = useState("all");
+  const [search, setSearch] = useState("");
 
   const location = useLocation();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (login && location.pathname === "/login") navigate("admin/movies");
-    else if (!login) navigate("/movie");
-  }, [login]);
+  // useEffect(() => {
+  //   if (login && location.pathname === "/login") navigate("admin/movies");
+  //   else if (!login) navigate("/movie");
+  // }, [login]);
 
+  // console.log(search);
   return (
     <div className="App">
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Users setLogin={setLogin} login={login} />
-            </>
-          }
-        >
-          {/*  */}
-          <Route path="movie" element={<Films />} />
+      <Context.Provider value={{ movie, setMovie }}>
+        <Routes>
           <Route
-            path="movie/:id"
+            path="/"
             element={
               <>
-                <Movie />
+                <Users
+                  setLogin={setLogin}
+                  login={login}
+                  filter={filter}
+                  setFilter={setFilter}
+                  search={search}
+                  setSearch={setSearch}
+                />
               </>
             }
-          />
-          {/*  */}
-
-          <Route
-            path="admin"
-            element={
-              <Admin
-                isModalOpen={isModalOpen}
-                setIsModalOpen={setIsModalOpen}
-              />
-            }
           >
+            {/*  */}
             <Route
-              path="movies"
+              path="movie"
               element={
-                <Movies
-                  isModalOpen={isModalOpen}
-                  setIsModalOpen={setIsModalOpen}
-                />
+                <Films filter={filter} search={search} setSearch={setSearch} />
               }
             />
-            <Route path="ganers" element={<Ganers />} />
-          </Route>
+            <Route
+              path="movie/:id"
+              element={
+                <>
+                  <Movie />
+                </>
+              }
+            />
+            {/*  */}
 
-          <Route
-            path="login"
-            element={<Login login={login} setLogin={setLogin} />}
-          />
-        </Route>
-      </Routes>
+            <Route
+              path="admin"
+              element={
+                <Admin
+                  isModalOpen={isModalOpen}
+                  setIsModalOpen={setIsModalOpen}
+                  isModalOpenGaner={isModalOpenGaner}
+                  setIsModalOpenGaner={setIsModalOpenGaner}
+                />
+              }
+            >
+              <Route
+                path="movies"
+                element={
+                  <Movies
+                    isModalOpen={isModalOpen}
+                    setIsModalOpen={setIsModalOpen}
+                    isModalOpenGaner={isModalOpenGaner}
+                    setIsModalOpenGaner={setIsModalOpenGaner}
+                  />
+                }
+              />
+              <Route
+                path="ganers"
+                element={
+                  <Ganers
+                    isModalOpenGaner={isModalOpenGaner}
+                    setIsModalOpenGaner={setIsModalOpenGaner}
+                  />
+                }
+              />
+            </Route>
+
+            <Route
+              path="login"
+              element={<Login login={login} setLogin={setLogin} />}
+            />
+          </Route>
+        </Routes>
+      </Context.Provider>
     </div>
   );
 }

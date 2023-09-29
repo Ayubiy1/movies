@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from "react-router";
 import { api } from "./api";
-import { useMutation, useQuery } from "react-query";
+import { useMutation, useQuery, useQueryClient } from "react-query";
 import { Button, Form, Input } from "antd";
 import {
   LikeOutlined,
@@ -9,17 +9,36 @@ import {
   RightOutlined,
 } from "@ant-design/icons";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Fade } from "react-awesome-reveal";
 import { useLocalStorageState } from "ahooks";
+import { Context } from "../contex";
 
 const Movie = () => {
+  const queryClient = useQueryClient();
+
+  const { movie, setMovie } = useContext(Context);
+
   const { data, isLoading, isError } = useQuery("api-movis", () =>
     api.get("/movies")
   );
   const mutation = useMutation((newData) => {
     return api.put(`/movies/${id}`, newData);
   });
+  const {
+    mutate: newPut,
+    isLoading: isLoadingPut,
+    isSuccess: isSuccessPut,
+  } = useMutation(
+    (newData) => {
+      return api.put(`/movies/${movie?.id}`, newData);
+    },
+    {
+      onSuccess: () => {
+        queryClient.invalidateQueries("api-movis");
+      },
+    }
+  );
 
   const [likeOne, setLikeOne] = useLocalStorageState("like-one", {
     defaultValue: false,
@@ -43,10 +62,6 @@ const Movie = () => {
   }, [data, id]);
 
   const [commentsData, setCommentsData] = useState(null);
-
-  const commentId = data?.data
-    .filter((i) => i.id == id)
-    .map((i) => i?.comments);
 
   if (isLoading)
     return (
@@ -82,6 +97,19 @@ const Movie = () => {
       },
     ]);
     console.log(commentsData);
+  };
+
+  const onComment = (values) => {
+    const newComment = {
+      id: movie?.comments?.length,
+      ...values,
+      img: "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
+    };
+    const commentss = [newComment, ...movie.comments];
+
+    const newData = { ...movie, comments: commentss };
+
+    newPut(newData);
   };
 
   return (
@@ -192,7 +220,6 @@ const Movie = () => {
                             type="primary"
                             className="flex items-center bg-[#4096ff]"
                             onClick={() => {
-                              console.log(item?.liked);
                               setLikeOne(true);
                             }}
                           >
@@ -204,7 +231,6 @@ const Movie = () => {
                             disabled
                             className="flex items-center bg-[#4096ff]"
                             onClick={() => {
-                              console.log(item?.liked);
                               setLikeOne(true);
                             }}
                           >
@@ -218,7 +244,6 @@ const Movie = () => {
                           <Button
                             className="flex items-center bg-red-700 text-white"
                             onClick={() => {
-                              console.log(item?.liked);
                               setLikeOne(false);
                             }}
                           >
@@ -273,7 +298,7 @@ const Movie = () => {
                       <Form
                         className="flex items-center justify-between shadow-lg mb-2"
                         style={{ borderBottom: "1px solid #000" }}
-                        onFinish={onFinish}
+                        onFinish={onComment}
                       >
                         <Form.Item
                           className="w-[100%]"
@@ -307,7 +332,7 @@ const Movie = () => {
                           return (
                             <div
                               key={item?.id}
-                              className="flex items-center gap-2 text-[#6e879f]"
+                              className="flex items-center gap-2 text-[#6e879f] mt-5"
                             >
                               <img
                                 src={comment?.img}

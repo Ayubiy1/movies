@@ -15,56 +15,40 @@
   ],
   "movies": [
     {
-      "name": "Qo'shnim Josus 2",
-      "country": "O'zbek",
-      "img": "http://images.uzmovi.com/ii/1599304404/bfb05b8e/31547938.jpg",
-      "type": "Klassika",
-      "favored": 6,
-      "liked": 120,
-      "data": 2017,
-      "ageLimit": 18,
-      "id": 1
-    },
-    {
       "name": "Ko'k Moviy qo'ng'iz premyera uzbek",
       "country": "AQSH",
       "img": "http://images.uzmovi.com/2023-08-20/142403a372425bc25db31dcfe0ee311c.jpg",
-      "type": "Jangari",
+      "type": "Ujas",
       "favored": 145,
       "liked": 1255,
       "data": 2023,
       "ageLimit": 0,
-      "id": 3,
-      "premyera": "",
       "comments": [
         {
           "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
-          "userId": 1,
+          "id": 1,
           "userComment": "Koriwga arzimas ekan tafsiya bermiman koriwwi"
         }
-      ]
+      ],
+      "id": 3
     },
     {
-      "id": 4,
       "name": "Arvohlar uyi kulbasi premyera yangi netflix serial uzbek o'zbek tilida",
       "country": "AQSH",
-      "type": "Jangari",
-      "typeName": "Tarjima kinolar / Qo'rqinchili / Serial",
-      "langulage": "O'zbek tilida (Tarjima)",
+      "img": "http://images.uzmovi.com/2023-08-14/fca234191daa9d3d04754c9873807070.jpg",
+      "type": "Ujas",
       "favored": 67,
       "liked": 526,
       "data": 2023,
-      "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
-      "img": "http://images.uzmovi.com/2023-08-14/fca234191daa9d3d04754c9873807070.jpg",
       "ageLimit": 18,
-      "premyera": "premyera",
       "comments": [
         {
           "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
-          "userId": 1,
+          "id": 1,
           "userComment": "Koriwga arzimas ekan tafsiya bermiman koriwwi"
         }
-      ]
+      ],
+      "id": 4
     },
     {
       "id": 6,
@@ -83,7 +67,7 @@
       "comments": [
         {
           "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
-          "userId": 1,
+          "id": 1,
           "userComment": "Koriwga arzimas ekan tafsiya bermiman koriwwi"
         }
       ]
@@ -105,7 +89,7 @@
       "comments": [
         {
           "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
-          "userId": 1,
+          "id": 1,
           "userComment": "Koriwga arzimas ekan tafsiya bermiman koriwwi"
         }
       ]
@@ -127,7 +111,7 @@
       "comments": [
         {
           "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
-          "userId": 1,
+          "id": 1,
           "userComment": "Koriwga arzimas ekan tafsiya bermiman koriwwi"
         }
       ]
@@ -149,7 +133,7 @@
       "comments": [
         {
           "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
-          "userId": 1,
+          "id": 1,
           "userComment": "Koriwga arzimas ekan tafsiya bermiman koriwwi"
         }
       ]
@@ -170,8 +154,13 @@
       "premyera": "premyera",
       "comments": [
         {
+          "id": 1,
+          "userComment": "1",
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1"
+        },
+        {
           "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
-          "userId": 1,
+          "id": 1,
           "userComment": "Koriwga arzimas ekan tafsiya bermiman koriwwi"
         }
       ]
@@ -193,7 +182,7 @@
       "comments": [
         {
           "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
-          "userId": 1,
+          "id": 1,
           "userComment": "Koriwga arzimas ekan tafsiya bermiman koriwwi"
         }
       ]
@@ -215,7 +204,7 @@
       "comments": [
         {
           "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
-          "userId": 1,
+          "id": 1,
           "userComment": "Koriwga arzimas ekan tafsiya bermiman koriwwi"
         }
       ]
@@ -237,32 +226,28 @@
       "comments": [
         {
           "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
-          "userId": 1,
+          "id": 1,
           "userComment": "Koriwga arzimas ekan tafsiya bermiman koriwwi"
         }
       ]
     },
     {
-      "id": 15,
       "name": "Qo'g'irchoq premyera",
       "country": "Hindiston",
-      "type": "Drama",
-      "typeName": "Tarjima kinolar / Hind / Jangari / Drama",
-      "langulage": "O'zbek tilida (Tarjima)",
+      "img": "http://images.uzmovi.com/2022-12-25/2478b9427ac9bddcc2a214a95ecc51a2.jpg",
+      "type": "Jangari",
       "favored": 124,
       "liked": 875,
       "data": 2022,
-      "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
-      "img": "http://images.uzmovi.com/2022-12-25/2478b9427ac9bddcc2a214a95ecc51a2.jpg",
       "ageLimit": 18,
-      "premyera": "",
       "comments": [
         {
           "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
-          "userId": 1,
+          "id": 1,
           "userComment": "Koriwga arzimas ekan tafsiya bermiman koriwwi"
         }
-      ]
+      ],
+      "id": 15
     },
     {
       "name": "Cho'qintirgan ota hind kino premyera",
@@ -273,20 +258,31 @@
       "liked": 0,
       "data": "2023-09-01",
       "ageLimit": "12",
-      "id": 19
+      "id": 19,
+      "comments": [
+        {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
+          "id": 1,
+          "userComment": "Koriwga arzimas ekan tafsiya bermiman koriwwi"
+        }
+      ]
     },
     {
       "name": "Garovdagilar qasos premyera",
       "country": "AQSH",
-      "langulage": "O'zbek tilida (Tarjima)",
-      "type": "Jangari",
-      "moviLink": "http://images.uzmovi.com/2023-09-18/4b4a6e01436a1f1b4c7f6281baeac1fc.jpg",
       "img": "http://images.uzmovi.com/2023-09-27/77e139fe8c722fbfb1cafb7e2a183694.jpg",
-      "ageLimit": "12",
-      "premyera": "",
-      "data": "2023-02-28",
-      "liked": 26,
+      "type": "Jangari",
       "favored": 5,
+      "liked": 26,
+      "data": "2023-02-28",
+      "ageLimit": "12",
+      "comments": [
+        {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
+          "id": 1,
+          "userComment": "Koriwga arzimas ekan tafsiya bermiman koriwwi"
+        }
+      ],
       "id": 21
     },
     {
@@ -301,7 +297,14 @@
       "data": "2023-02-12",
       "liked": 34,
       "favored": 2,
-      "id": 22
+      "id": 22,
+      "comments": [
+        {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
+          "id": 1,
+          "userComment": "Koriwga arzimas ekan tafsiya bermiman koriwwi"
+        }
+      ]
     },
     {
       "name": "Qachon uylanasan ali premyera",
@@ -315,7 +318,14 @@
       "data": "2023-06-12",
       "liked": 34,
       "favored": 2,
-      "id": 23
+      "id": 23,
+      "comments": [
+        {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
+          "id": 1,
+          "userComment": "Koriwga arzimas ekan tafsiya bermiman koriwwi"
+        }
+      ]
     },
     {
       "name": "Alvido erginam premyera",
@@ -329,7 +339,14 @@
       "data": "2023-08-25",
       "liked": 58,
       "favored": 8,
-      "id": 24
+      "id": 24,
+      "comments": [
+        {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
+          "id": 1,
+          "userComment": "Koriwga arzimas ekan tafsiya bermiman koriwwi"
+        }
+      ]
     },
     {
       "id": 25,
@@ -348,7 +365,7 @@
       "comments": [
         {
           "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
-          "userId": 1,
+          "id": 1,
           "userComment": "Koriwga arzimas ekan tafsiya bermiman koriwwi"
         }
       ]
@@ -370,7 +387,7 @@
       "comments": [
         {
           "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
-          "userId": 1,
+          "id": 1,
           "userComment": "Koriwga arzimas ekan tafsiya bermiman koriwwi"
         }
       ]
@@ -383,7 +400,13 @@
       "moviLink": "http://88.99.100.31/Kinolar/Moviy%20qo%27ng%27iz%20480p%20O%27zbek%20tilida%20(asilmedia.net).mp4",
       "img": "http://images.uzmovi.com/2023-09-11/781a0c5ec5d300635b7e0a50c986dbd9.jpg",
       "ageLimit": "10",
-      "comments": [],
+      "comments": [
+        {
+          "img": "https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.7.1",
+          "id": 1,
+          "userComment": "Koriwga arzimas ekan tafsiya bermiman koriwwi"
+        }
+      ],
       "data": "2023-05-18",
       "liked": 0,
       "favored": 0,
@@ -407,14 +430,19 @@
       "value": "Komediya"
     },
     {
-      "id": 14,
+      "id": 4,
       "label": "Tarixiy",
       "value": "Tarixiy"
     },
     {
-      "id": 3,
+      "id": 5,
       "label": "Ujas",
       "value": "Ujas"
+    },
+    {
+      "id": 6,
+      "label": "Test ganer success",
+      "value": "Test ganer success"
     }
   ]
 }

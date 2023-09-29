@@ -30,7 +30,7 @@
 
 /** BEGIN CSS **/
 body {
-  background: #333333;
+  /* background: #333333; */
 }
 @keyframes rotate-loading {
   0% {
@@ -281,3 +281,10 @@ body {
   top: 0;
   width: 100px;
 }
+
+/* ant-dropdown-menu  */
+.ant-dropdown-menu {
+  background-color: #232f3d !important;
+}
+
+/*  */

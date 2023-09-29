@@ -30,12 +30,15 @@ import { VideoCameraAddOutlined } from "@ant-design/icons";
 
 const { Header, Sider, Content } = Layout;
 
-const Admin = () => {
+const Admin = ({ setIsModalOpenGaner, isModalOpenGaner }) => {
   const [dateMovie, setDateMovie] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeMenu, setActiveMen] = useLocalStorageState("active-menu", {
     defaultValue: 1,
   });
+
+  const location = useLocation();
+
   const [messageApi, contextHolder] = message.useMessage();
 
   const navigate = useNavigate();
@@ -59,6 +62,7 @@ const Admin = () => {
   const { data, isLoading, isError } = useQuery("api-movisa", () =>
     api.get("/movies")
   );
+
   const {
     data: dataGaners,
     isLoading: isLoadingGaners,
@@ -190,10 +194,20 @@ const Admin = () => {
               height: 64,
             }}
           />
-          <Button className="mr-10 flex items-center" onClick={showModal}>
-            <VideoCameraAddOutlined />
-            Film qo'shish
-          </Button>
+          {location.pathname == "/admin/movies" ? (
+            <Button className="mr-10 flex items-center" onClick={showModal}>
+              <VideoCameraAddOutlined />
+              Film qo'shish
+            </Button>
+          ) : (
+            <Button
+              className="mr-10 flex items-center"
+              onClick={() => setIsModalOpenGaner(true)}
+            >
+              <VideoCameraAddOutlined />
+              Ganer qo'shish
+            </Button>
+          )}
         </Header>
 
         <Modal

@@ -1,37 +1,19 @@
-import {
-  Button,
-  DatePicker,
-  Form,
-  Input,
-  Modal,
-  Space,
-  Table,
-  Tag,
-  message,
-} from "antd";
+import { Button, Form, Input, Modal, Table, Tag, message } from "antd";
 import { api } from "../../user/api";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import { DeleteFilled, EditFilled } from "@ant-design/icons";
 import { useState } from "react";
 import { Fade } from "react-awesome-reveal";
-import { useParams } from "react-router";
 import { ExclamationCircleFilled } from "@ant-design/icons";
 const { confirm } = Modal;
 
 const Movies = ({ isModalOpen, setIsModalOpen }) => {
   const [itemS, setItemS] = useState({});
-
   const [messageApi, contextHolder] = message.useMessage();
   const success = () => {
     messageApi.open({
       type: "success",
       content: `Kino muvaffaqiyatli o'zgartirildi`,
-    });
-  };
-  const error = () => {
-    messageApi.open({
-      type: "error",
-      content: "This is an error message",
     });
   };
   const successDelete = () => {
@@ -40,15 +22,6 @@ const Movies = ({ isModalOpen, setIsModalOpen }) => {
       content: `Kino muvaffaqiyatli o'chirildi`,
     });
   };
-
-  const successPost = () => {
-    messageApi.open({
-      type: "success",
-      content: `Kino muvaffaqiyatli qo'shildi`,
-    });
-  };
-
-  const { id } = useParams();
 
   const queryClient = useQueryClient();
   const { data, isLoading, isError } = useQuery("api-movis-admin", () =>
@@ -98,7 +71,8 @@ const Movies = ({ isModalOpen, setIsModalOpen }) => {
   };
 
   const onFinish = (value) => {
-    newPut({ ...value });
+    const newData = { ...value, comments: itemS?.comments };
+    newPut(newData);
     setIsModalOpen(false);
   };
 
@@ -164,6 +138,7 @@ const Movies = ({ isModalOpen, setIsModalOpen }) => {
               className="bg-blue-600 text-white flex items-center"
               onClick={() => {
                 setMovieIdEdit(row?.id);
+                setItemS(row);
                 setModalType("edit");
                 showModal();
               }}
@@ -202,10 +177,6 @@ const Movies = ({ isModalOpen, setIsModalOpen }) => {
     return <>Looading...</>;
   }
 
-  // if (isSuccessPut) {
-  //   success();
-  // }
-
   return (
     <>
       {contextHolder}
@@ -227,7 +198,7 @@ const Movies = ({ isModalOpen, setIsModalOpen }) => {
                     onFinish(values);
                     setItemS(item);
                   }}
-                  initialValues={{ ...item }}
+                  initialValues={{ ...item }} 
                 >
                   <Form.Item name="name" label="Kino nomi">
                     <Input value={item.name} />
@@ -279,52 +250,11 @@ const Movies = ({ isModalOpen, setIsModalOpen }) => {
                   >
                     delete
                   </Button>
-
-                  {/* {
-      "name": "Qo'shnim Josus",
-      "country": "O'zbek",
-      "type": "Klassika",
-      "favored": 6,
-      "liked": 120,
-      "data": 2017,
-      "ageLimit": 18,
-      "img": "http://images.uzmovi.com/ii/1599304404/bfb05b8e/31547938.jpg",
-      "id": 1
-    }, */}
                 </>
               )}
             </Modal>
           );
         })}
-
-      {/* <Modal
-        title={itemS?.name}
-        open={isModalDelete}
-        onOk={handleOkDelete}
-        onCancel={handleCancelDelete}
-        key={itemS?.id}
-        footer={false}
-      >
-        <p>{itemS?.name} ni ochirmoqchimisiz</p>
-
-        <div className="">
-          <Button
-            onClick={() => {
-              deletE(itemS?.id);
-            }}
-          >
-            Yo'q bekor qilish
-          </Button>
-
-          <Button
-            onClick={() => {
-              deletE(itemS?.id);
-            }}
-          >
-            Ha ochirmoqchi man
-          </Button>
-        </div>
-      </Modal> */}
 
       <Fade triggerOnce>
         <Table
